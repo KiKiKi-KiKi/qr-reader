@@ -66,7 +66,7 @@ def decode(frame):
     print(type(obj.type), type(obj.data))
     draw_qr_data_by_text( frame, str(obj.type), str(obj.data) )
 
-  draw_qr_code_num(frame, len(obj))
+  draw_qr_code_num(frame, len(decoded_objs))
   return decoded_objs
 
 '''
