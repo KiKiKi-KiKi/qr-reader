@@ -26,14 +26,14 @@ Picameraの映像をMotion JPEGとしてブラウザから確認できるよう�
 @app.route('/stream')
 def stream():
   return Response(gen(),
-                  minetype = 'multipart/x-mixed-replace; boundary=frame')
+                  mimetype = 'multipart/x-mixed-replace; boundary=frame')
 
 def gen():
   while True:
     frame = get_frame()
     # http://ailaby.com/yield/
     yield (b'--frame\r\n'
-           b'Content-Type: image\r\n\r\n' + frame + b'\r\n\r\n')
+      b'Content-Type: image\r\n\r\n' + frame + b'\r\n\r\n')
 
 '''
 Picameraからフレームを読み込み、QR認識とその位置を描画
