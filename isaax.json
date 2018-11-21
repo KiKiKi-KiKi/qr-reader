@@ -1,0 +1,6 @@
+{
+  "description": "QR reader sample",
+  "scripts": {
+    "start": "python3 -u main.py"
+  }
+}
