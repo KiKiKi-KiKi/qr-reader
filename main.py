@@ -92,12 +92,12 @@ def draw_qr_data_by_text(frame, obj):
   qrType = str(obj.type)
   qrData = str(obj.data)
   left, top, width, height = obj.rect
-  cv2.putText(frame, '{0}: {1}'.format(qrType, qrData), (left, top + 50), fontType, 2, (0, 255, 0), 3, cv2.LINE_AA)
+  cv2.putText(frame, '{0}: {1}'.format(qrType, qrData), (left, top + height + 50), fontType, 1, (0, 255, 0), 3, cv2.LINE_AA)
 
 def draw_qr_code_num(frame, num):
   fontType = cv2.FONT_HERSHEY_SIMPLEX
   text = 'Detected QR cordes: {0}'.format(str(num))
-  cv2.putText(frame, text, (int(640/2), 100), fontType, 2, (0, 255, 0), 3, cv2.LINE_AA)
+  cv2.putText(frame, text, (0, 100), fontType, 2, (0, 255, 0), 2, cv2.LINE_AA)
 
 # Flaskサーバーを立ち上げる
 if __name__ == '__main__':
