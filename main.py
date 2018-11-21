@@ -75,7 +75,7 @@ def draw_positions(frame, decoded_objs):
     frame = cv2.rectangle(frame,
               (left, top),
               (left + width, height + top),
-              (0, 255, 0), 2)
+              (122,197,197), 4)
 
 # Flaskサーバーを立ち上げる
 if __name__ == '__main__':
