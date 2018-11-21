@@ -63,7 +63,8 @@ def decode(frame):
     print(datetime.now().strftime('%H:%M:%S.%f'))
     print('Type: ', obj.type)
     print('Data: ', obj.data)
-    draw_qr_data_by_text(frame, obj.type, obj.data)
+    print(type(obj.type), type(obj.data))
+    draw_qr_data_by_text( frame, str(obj.type), str(obj.data) )
 
   draw_qr_code_num(frame, len(obj))
   return decoded_objs
@@ -84,13 +85,13 @@ def draw_positions(frame, decoded_objs):
 cv2.putText
 http://labs.eecs.tottori-u.ac.jp/sd/Member/oyamada/OpenCV/html/py_tutorials/py_gui/py_drawing_functions/py_drawing_functions.html#id8
 '''
-def draw_qr_data_by_text(frame, type, data):
+def draw_qr_data_by_text(frame, qrType, qrData):
   fontType = cv2.FONT_HERSHEY_SIMPLEX
-  cv2.putText(frame, f'{type}: {data}', (width/4, 10), fontType, 7, (0, 255, 0), 3, cv2.CV_AA)
+  cv2.putText(frame, f'{qrType}: {qrData}', (width/4, 10), fontType, 7, (0, 255, 0), 3, cv2.CV_AA)
 
 def draw_qr_code_num(frame, num):
   fontType = cv2.FONT_HERSHEY_SIMPLEX
-  text = f'Detected QR cordes: {num}'
+  text = f'Detected QR cordes: {str(num)}'
   cv2.putText(frame, text, (width/4, 10), fontType, 7, (0, 255, 0), 3, cv2.CV_AA)
 
 # Flaskサーバーを立ち上げる
