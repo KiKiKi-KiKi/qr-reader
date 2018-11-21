@@ -87,11 +87,11 @@ http://labs.eecs.tottori-u.ac.jp/sd/Member/oyamada/OpenCV/html/py_tutorials/py_g
 '''
 def draw_qr_data_by_text(frame, qrType, qrData):
   fontType = cv2.FONT_HERSHEY_SIMPLEX
-  cv2.putText(frame, f'{qrType}: {qrData}', (width/4, 10), fontType, 7, (0, 255, 0), 3, cv2.CV_AA)
+  cv2.putText(frame, '{0}: {1}'.format(qrType, qrData), (width/4, 10), fontType, 7, (0, 255, 0), 3, cv2.CV_AA)
 
 def draw_qr_code_num(frame, num):
   fontType = cv2.FONT_HERSHEY_SIMPLEX
-  text = f'Detected QR cordes: {str(num)}'
+  text = 'Detected QR cordes: {0}'.format(str(num))
   cv2.putText(frame, text, (width/4, 10), fontType, 7, (0, 255, 0), 3, cv2.CV_AA)
 
 # Flaskサーバーを立ち上げる
